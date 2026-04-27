@@ -1,6 +1,6 @@
 # CG Group Z Project
 
-Godot download (our project is in Godot 4.6): https://godotengine.org/download/windows/.
+Godot download (our project is in Godot 4.6.2): https://godotengine.org/download/windows/.
 
 How to use Godot project with Github Desktop: https://www.youtube.com/watch?v=fZ-CJIYPFMI&t=370s
 
