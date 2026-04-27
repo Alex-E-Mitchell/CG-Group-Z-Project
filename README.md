@@ -16,7 +16,7 @@ From there, drag a .bin file AND the corresponding .gltf file into the "models" 
 To then actually be able to use that model in our game, create a 3D scene on Godot, name it the same as the model (just as a convention for our uses), and drag the model from the models folder under the new scene that you created, making it a child. This way we can have a collisionshape3D child next to it. 
 
 Here's an example of this working: 
-- I wanted a platform asset to use in our game, so I went to KayKit_Platformer_Pack_1.0.Free -> Assets -> gltf -> red in my files
+- I wanted a platform asset to use in our game, so in my files I went to KayKit_Platformer_Pack_1.0.Free -> Assets -> gltf -> red
 - I then scrolled down until I saw "platform_6x6x4_red"
 - I then dragged the .bin file and the .gltf file both called "platform_6x6x4_red" into the models folder in Godot
 - I then clicked the "+" button at the top bar of the screen in Godot to create a new scene.
