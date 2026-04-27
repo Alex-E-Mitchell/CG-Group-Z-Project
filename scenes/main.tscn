@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://dpockbj8riq7c" path="res://scenes/platform_6x_6x_4_red.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://ccfl3amiqy0cn" path="res://scripts/control.gd" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://0qma2gbpxvpx" path="res://scenes/platform_slope_2x_6x_4_red.tscn" id="4_jyhfs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,8 +27,8 @@ environment = SubResource("Environment_sugp2")
 transform = Transform3D(-0.75011104, 0.6558039, 0.085174054, 0, -0.1287956, 0.99167114, 0.6613118, 0.7438635, 0.09661101, 0, 0, 0)
 shadow_enabled = true
 
-[node name="ProtoController" parent="." unique_id=545363470 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.011466, 1.5329337, -3.5120254)
+[node name="Player" parent="." unique_id=545363470 instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.992986, 1.5329337, -1.1257656)
 can_sprint = true
 can_freefly = true
 input_left = "move_left"
@@ -38,6 +39,12 @@ input_jump = "jump"
 
 [node name="platform_6x6x4_red" parent="." unique_id=929607107 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -3, -4)
+
+[node name="platform_6x6x4_red5" parent="." unique_id=982385779 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -23)
+
+[node name="platform_6x6x4_red6" parent="." unique_id=1890788647 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -23)
 
 [node name="platform_6x6x4_red2" parent="." unique_id=1567081295 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -3, -4)
@@ -66,5 +73,23 @@ offset_right = -159.07
 offset_bottom = 85.00001
 scale = Vector2(2.515, 2.515)
 text = "EXIT GAME"
+
+[node name="platform_slope_2x6x4_red" parent="." unique_id=1090388886 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -10)
+
+[node name="platform_slope_2x6x4_red2" parent="." unique_id=1261799285 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -10)
+
+[node name="platform_slope_2x6x4_red3" parent="." unique_id=744760482 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -10)
+
+[node name="platform_slope_2x6x4_red4" parent="." unique_id=1427644641 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -10)
+
+[node name="platform_slope_2x6x4_red5" parent="." unique_id=1092404723 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -10)
+
+[node name="platform_slope_2x6x4_red6" parent="." unique_id=240385666 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -10)
 
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]

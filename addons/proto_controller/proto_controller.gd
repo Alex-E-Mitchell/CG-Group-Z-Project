@@ -53,7 +53,13 @@ var freeflying : bool = false
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
 
+# Respawn logic stuff
+@export var fall_reset_y: float = -10.0
+
+var spawn_position: Vector3
+
 func _ready() -> void:
+	spawn_position = global_position
 	check_input_mappings()
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
@@ -117,7 +123,19 @@ func _physics_process(delta: float) -> void:
 	
 	# Use velocity to actually move
 	move_and_slide()
+	
+	# Trigger respawn if player gets too low
+	if global_position.y < fall_reset_y:
+		respawn()
 
+func respawn() -> void:
+	global_position = spawn_position
+	velocity = Vector3.ZERO
+	
+	look_rotation = Vector2.ZERO
+	
+	transform.basis = Basis()
+	head.transform.basis = Basis()
 
 ## Rotate us to look around.
 ## Base of controller rotates around y (left/right). Head rotates around x (up/down).
