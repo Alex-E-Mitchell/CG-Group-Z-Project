@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cgrw3w27ua26k"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://dpockbj8riq7c" path="res://scenes/platform_6x_6x_4_red.tscn" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://ccfl3amiqy0cn" path="res://scripts/control.gd" id="3_sugp2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_0wfyh"]
+sky_material = SubResource("ProceduralSkyMaterial_o5qli")
+
+[sub_resource type="Environment" id="Environment_sugp2"]
+background_mode = 2
+sky = SubResource("Sky_0wfyh")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D" unique_id=816671293]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1662664004]
+environment = SubResource("Environment_sugp2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=922944888]
+transform = Transform3D(-0.75011104, 0.6558039, 0.085174054, 0, -0.1287956, 0.99167114, 0.6613118, 0.7438635, 0.09661101, 0, 0, 0)
+shadow_enabled = true
+
+[node name="ProtoController" parent="." unique_id=545363470 instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.011466, 1.5329337, -3.5120254)
+can_sprint = true
+can_freefly = true
+input_left = "move_left"
+input_right = "move_right"
+input_forward = "move_up"
+input_back = "move_down"
+input_jump = "jump"
+
+[node name="platform_6x6x4_red" parent="." unique_id=929607107 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -3, -4)
+
+[node name="platform_6x6x4_red2" parent="." unique_id=1567081295 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -3, -4)
+
+[node name="platform_6x6x4_red3" parent="." unique_id=1942580764 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -3, 2)
+
+[node name="platform_6x6x4_red4" parent="." unique_id=1177963048 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -3, 2)
+
+[node name="Control" type="Control" parent="." unique_id=2101229226]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+script = ExtResource("3_sugp2")
+
+[node name="Button" type="Button" parent="Control" unique_id=2082409878]
+layout_mode = 0
+offset_left = -250.07
+offset_top = 54.0
+offset_right = -159.07
+offset_bottom = 85.00001
+scale = Vector2(2.515, 2.515)
+text = "EXIT GAME"
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
