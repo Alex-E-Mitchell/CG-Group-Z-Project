@@ -2,9 +2,9 @@
 
 Link to platformer asset pack by Kay Lousberg (it's free): https://kaylousberg.itch.io/kaykit-platformer . We should use these assets as our basic environment. 
 
-After you've downloaded this pack, to import an asset into our Godot project you need to go to the following
-KayKit_Platformer_Pack_1.0_FREE -> Assets -> gltf -> red (for example)
-from there, drag a .bin file AND the corresponding .gltf file into the "models" folder in our Godot project (they'll be named the same thing). It should automatically texture itself based on the "platformer_texture.png" file within the models folder. 
+After you've downloaded this pack, to import an asset into our Godot project you need to go to the following in your file system wherever you downloaded it:
+KayKit_Platformer_Pack_1.0_FREE -> Assets -> gltf -> red (for example).
+From there, drag a .bin file AND the corresponding .gltf file into the "models" folder in our Godot project (they'll be named the same thing). It should automatically texture itself based on the "platformer_texture.png" file within the models folder. 
 
 To then actually be able to use that model in our game, create a 3D scene on Godot, name it the same as the model (just as a convention for our uses), and drag the model from the models folder under the new scene that you created, making it a child. This way we can have a collisionshape3D child next to it. 
 
