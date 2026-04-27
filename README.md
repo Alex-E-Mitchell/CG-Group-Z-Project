@@ -4,7 +4,7 @@ Godot download (our project is in Godot 4.6): https://godotengine.org/download/w
 
 How to use Godot project with Github Desktop: https://www.youtube.com/watch?v=fZ-CJIYPFMI&t=370s
 
-Basiscs on making a 3D game in Godot: https://www.youtube.com/watch?v=ke5KpqcoiIU
+Basics on making a 3D game in Godot: https://www.youtube.com/watch?v=ke5KpqcoiIU
 
 # Using KayKit Platformer Asset Pack
 Link to platformer asset pack by Kay Lousberg (it's free): https://kaylousberg.itch.io/kaykit-platformer . We should use these assets as our basic environment. 
