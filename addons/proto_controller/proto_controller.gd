@@ -53,6 +53,7 @@ var freeflying : bool = false
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
 
+@export_group("Other")
 # Respawn logic stuff
 @export var fall_reset_y: float = -10.0
 
@@ -132,10 +133,14 @@ func respawn() -> void:
 	global_position = spawn_position
 	velocity = Vector3.ZERO
 	
-	look_rotation = Vector2.ZERO
+	# x = vertical/head pitch, y = horizontal/body yaw
+	look_rotation = Vector2(0, deg_to_rad(90))
 	
 	transform.basis = Basis()
+	rotate_y(look_rotation.y)
+	
 	head.transform.basis = Basis()
+	head.rotate_x(look_rotation.x)
 
 ## Rotate us to look around.
 ## Base of controller rotates around y (left/right). Head rotates around x (up/down).
