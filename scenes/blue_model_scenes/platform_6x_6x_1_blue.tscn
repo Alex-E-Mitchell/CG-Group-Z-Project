@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bn27wibagg5c2"]
+
+[ext_resource type="PackedScene" uid="uid://eograxnhmfxu" path="res://models/blue/platform_6x6x1_blue.gltf" id="1_hu64s"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i7dhj"]
+points = PackedVector3Array(-2.9500782, 0.04992169, -3, -3, 0.04992169, -2.9500782, -2.9500782, 0.94998044, -3, 2.949491, 0.04992169, -3, -2.9500782, 0, -2.9500782, -3, 0.94998044, -2.9500782, -3, 0.04992169, 2.949491, -2.9500782, 1, -2.9500782, 2.949491, 0.94998044, -3, 3, 0.04992169, -2.9500782, 2.949491, 0, -2.9500782, -2.9500782, 0, 2.949491, -3, 0.94998044, 2.949491, -2.9500782, 0.04992169, 3, -2.9500782, 1, 2.949491, 2.949491, 1, -2.9500782, 3, 0.94998044, -2.9500782, 3, 0.04992169, 2.949491, 2.949491, 0, 2.949491, -2.9500782, 0.94998044, 3, 2.949491, 0.04992169, 3, 2.949491, 1, 2.949491, 3, 0.94998044, 2.949491, 2.949491, 0.94998044, 3)
+
+[node name="platform_6x6x1_blue" type="StaticBody3D" unique_id=1268008198]
+
+[node name="platform_6x6x1_blue2" parent="." unique_id=2137397306 instance=ExtResource("1_hu64s")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1972546001]
+shape = SubResource("ConvexPolygonShape3D_i7dhj")
