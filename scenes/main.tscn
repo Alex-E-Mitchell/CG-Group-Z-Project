@@ -4,12 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://ccfl3amiqy0cn" path="res://scripts/control.gd" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c3hh40tghlqqj" path="res://scenes/yellow_models/tile_medium_yellow.tscn" id="4_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://3mmn34mjhwml" path="res://scenes/yellow_models/tile_medium_yellow_moving.tscn" id="5_trceg"]
+[ext_resource type="PackedScene" uid="uid://duwjcfe0khu8k" path="res://scenes/yellow_models/tile_slope_low_medium_yellow.tscn" id="6_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://ln2ugmt7keqd" path="res://models/city assets/building_B.gltf" id="10_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://7l1aj7ph8e37" path="res://other textures/summer_background_47_a.jpg" id="12_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://ckq51ggweuesp" path="res://models/city assets/building_D.gltf" id="12_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cfhdnps2hbn4j" path="res://models/city assets/building_E.gltf" id="13_muem4"]
 [ext_resource type="PackedScene" uid="uid://vu1bgv5u2edi" path="res://models/city assets/building_F.gltf" id="14_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://fy2q6ie3tpet" path="res://scenes/red_models/swiper_team_red.tscn" id="14_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://momeufqay7a1" path="res://models/green/platform_6x6x4_green.gltf" id="14_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://btd6htp61mybe" path="res://scenes/yellow_models/star.tscn" id="15_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cn1k4r7bii7ll" path="res://models/city assets/building_G.gltf" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bnxc2qwadodd3" path="res://models/city assets/building_H.gltf" id="16_jbj1t"]
 
@@ -57,7 +61,7 @@ shadow_enabled = true
 directional_shadow_max_distance = 1.0
 
 [node name="Player" parent="." unique_id=545363470 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -13.836397, 3.5329342, 69.87424)
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -11.836397, 3.5329342, 69.87424)
 can_sprint = true
 can_freefly = true
 jump_velocity = 6.0
@@ -92,23 +96,90 @@ text = "EXIT GAME"
 [node name="tileMedium_Yellow" parent="MapBlocks" unique_id=291946824 instance=ExtResource("4_ya4ey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2, 70)
 
-[node name="tileMedium_Yellow2" parent="MapBlocks" unique_id=368406342 instance=ExtResource("4_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 2, 70)
+[node name="tileMedium_Yellow5" parent="MapBlocks" unique_id=474639579 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2, 68)
 
-[node name="tileMedium_Yellow3" parent="MapBlocks" unique_id=342102097 instance=ExtResource("4_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 2, 78)
+[node name="tileMedium_Yellow7" parent="MapBlocks" unique_id=303888303 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2, 72)
 
-[node name="tileMedium_Yellow4" parent="MapBlocks" unique_id=366483073 instance=ExtResource("4_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 2, 69)
+[node name="tileMedium_Yellow16" parent="MapBlocks" unique_id=466857229 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, 72)
 
-[node name="tileMedium_Yellow5" parent="MapBlocks" unique_id=362601392 instance=ExtResource("4_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 2, 69)
+[node name="tileMedium_Yellow17" parent="MapBlocks" unique_id=1835408098 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, 70)
 
-[node name="tileMedium_Yellow6" parent="MapBlocks" unique_id=41455799 instance=ExtResource("4_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 2, 76)
+[node name="tileMedium_Yellow21" parent="MapBlocks" unique_id=1757839267 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, 68)
 
-[node name="tileMedium_Yellow7" parent="MapBlocks" unique_id=1227257825 instance=ExtResource("4_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 2, 71)
+[node name="tileMedium_Yellow22" parent="MapBlocks" unique_id=2091259437 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, 68)
+
+[node name="tileMedium_Yellow23" parent="MapBlocks" unique_id=424582470 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, 70)
+
+[node name="tileMedium_Yellow24" parent="MapBlocks" unique_id=1300291831 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, 72)
+
+[node name="tileMedium_Yellow2" parent="MapBlocks" unique_id=237638438 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 4, 71)
+
+[node name="tileMedium_Yellow10" parent="MapBlocks" unique_id=1542972506 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 4, 71)
+
+[node name="tileMedium_Yellow11" parent="MapBlocks" unique_id=1925291663 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 4, 69)
+
+[node name="tileMedium_Yellow12" parent="MapBlocks" unique_id=288985206 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 4, 69)
+
+[node name="tileMedium_Yellow3" parent="MapBlocks" unique_id=228719513 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 6, 65)
+
+[node name="tileMedium_Yellow8" parent="MapBlocks" unique_id=506158304 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 6, 63)
+
+[node name="tileMedium_Yellow13" parent="MapBlocks" unique_id=1206227063 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 6, 63)
+
+[node name="tileMedium_Yellow14" parent="MapBlocks" unique_id=1175959914 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 6, 65)
+
+[node name="tileMedium_Yellow4" parent="MapBlocks" unique_id=113602370 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 7, 73)
+
+[node name="tileMedium_Yellow15" parent="MapBlocks" unique_id=248933873 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 7, 75)
+
+[node name="tileMedium_Yellow6" parent="MapBlocks" unique_id=56340700 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 10.8, 66)
+
+[node name="tileMedium_Yellow18" parent="MapBlocks" unique_id=1727931474 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 10.8, 64)
+
+[node name="tileMedium_Yellow19" parent="MapBlocks" unique_id=506479771 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 10.8, 64)
+
+[node name="tileMedium_Yellow20" parent="MapBlocks" unique_id=851746153 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 10.8, 66)
+
+[node name="tileMedium_Yellow9" parent="MapBlocks" unique_id=1790266703 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.799995, 15, 69.1)
+
+[node name="AnimatableBody3D" parent="MapBlocks" unique_id=1061437184 instance=ExtResource("5_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 14, 67)
+
+[node name="AnimatableBody3D3" parent="MapBlocks" unique_id=1440879110 instance=ExtResource("5_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 12, 71)
+reverse_direction = true
+
+[node name="AnimatableBody3D2" parent="MapBlocks" unique_id=1389270325 instance=ExtResource("5_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 9.200001, 67)
+
+[node name="tileSlopeLowMedium_Yellow" parent="MapBlocks" unique_id=1177120198 instance=ExtResource("6_jbj1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 7.6, 75)
+
+[node name="tileSlopeLowMedium_Yellow2" parent="MapBlocks" unique_id=1351954956 instance=ExtResource("6_jbj1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 7.6, 73)
 
 [node name="Non-CollisonBlocks" type="Node3D" parent="." unique_id=49846920]
 
@@ -428,5 +499,58 @@ shape = SubResource("BoxShape3D_eb6dy")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Bounds" unique_id=695484836]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.46576, 2.5, 51.186638)
 shape = SubResource("BoxShape3D_jkv2x")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=949678610]
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=216755979]
+transform = Transform3D(3.6000001, 0, 0, 0, 1, 0, 0, 0, 4.55768, -34.42, 8, 74.20382)
+size = Vector3(1.1, 1, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2029287615]
+transform = Transform3D(3.6000001, 0, 0, 0, 1, 0, 0, 0, 4.55768, -41.62, 10, 69.64614)
+size = Vector3(1.1, 1, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=61258751]
+transform = Transform3D(3.6000001, 0, 0, 0, 1, 0, 0, 0, 4.55768, -48.82, 12, 65.08846)
+size = Vector3(1.1, 1, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1681470482]
+transform = Transform3D(3.6000001, 0, 0, 0, 1, 0, 0, 0, 4.55768, -56.02, 14, 74.20383)
+size = Vector3(1.1, 1, 1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1086297434]
+transform = Transform3D(3.6000001, 0, 0, 0, 1, 0, 0, 0, 4.55768, -63.219997, 15, 65.08847)
+size = Vector3(1.1, 1, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1574031471]
+transform = Transform3D(3.6000001, 0, 0, 0, 1, 0, 0, 0, 4.55768, -74.02, 17, 69.64615)
+size = Vector3(1.1, 1, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=606803900]
+transform = Transform3D(3.6000001, 0, 0, 0, 1, 0, 0, 0, 4.55768, -21.099998, 4.8, 72.83652)
+size = Vector3(1.1, 1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1180392326]
+transform = Transform3D(3.6000001, 0, 0, 0, 1, 0, 0, 0, 4.55768, -26.5, 6.5, 64.63269)
+size = Vector3(1.1, 1, 1)
+
+[node name="swiper_teamRed" parent="." unique_id=315751419 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 5.5, 70)
+rotation_speed_degrees = 180.0
+
+[node name="swiper_teamRed2" parent="." unique_id=1387661614 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 7.5, 64)
+rotation_speed_degrees = 180.0
+reverse_direction = true
+
+[node name="swiper_teamRed3" parent="." unique_id=653913912 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 12.5, 65)
+rotation_speed_degrees = 180.0
+
+[node name="Star" parent="." unique_id=690583090 instance=ExtResource("15_jbj1t")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -73, 18.5, 69)
+collision_layer = 2
+collision_mask = 2
 
 [connection signal="pressed" from="UI/ExitGameButton" to="UI" method="_on_button_pressed"]

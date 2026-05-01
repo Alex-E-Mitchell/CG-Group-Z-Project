@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://fy2q6ie3tpet"]
+
+[ext_resource type="Script" uid="uid://bkj1roim5vvom" path="res://scripts/swiper_team_red.gd" id="1_8288h"]
+[ext_resource type="PackedScene" uid="uid://blruvkglt6jbi" path="res://models/mini game assets/swiper_teamRed.gltf.glb" id="1_g3m42"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8288h"]
+height = 3.1000001
+
+[node name="swiper_teamRed" type="AnimatableBody3D" unique_id=315751419]
+script = ExtResource("1_8288h")
+
+[node name="model" parent="." unique_id=922542836 instance=ExtResource("1_g3m42")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=603909089]
+transform = Transform3D(-4.371139e-08, 0, 1, 1, -4.3711385e-08, 4.371139e-08, 4.371139e-08, 1, 0, -4.371139e-08, 0.99999994, 1.35)
+shape = SubResource("CylinderShape3D_8288h")
