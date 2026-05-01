@@ -5,6 +5,9 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nknun"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_0ubeq"]
+radius = 0.7
+
 [node name="Star" type="AnimatableBody3D" unique_id=690583090]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_nknun")
@@ -13,3 +16,8 @@ script = ExtResource("1_nknun")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2017862900]
 shape = SubResource("SphereShape3D_nknun")
+
+[node name="CollectArea" type="Area3D" parent="." unique_id=1971106525]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollectArea" unique_id=1573616456]
+shape = SubResource("SphereShape3D_0ubeq")

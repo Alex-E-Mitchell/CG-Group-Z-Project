@@ -5,6 +5,9 @@
 
 extends CharacterBody3D
 
+## SIGNALS
+signal player_respawned
+
 ## Can we move around?
 @export var can_move : bool = true
 ## Are we affected by gravity?
@@ -141,6 +144,8 @@ func respawn() -> void:
 	
 	head.transform.basis = Basis()
 	head.rotate_x(look_rotation.x)
+
+	player_respawned.emit()
 
 ## Rotate us to look around.
 ## Base of controller rotates around y (left/right). Head rotates around x (up/down).
