@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://clre3vrs17lsq"]
+
+[ext_resource type="Script" uid="uid://dtpx8hdjbitqu" path="res://scenes/rotating_platform.gd" id="1_1qef8"]
+[ext_resource type="PackedScene" uid="uid://cnoxxpn5npbkj" path="res://models/mini game assets/tileMedium_teamYellow.gltf.glb" id="2_qr33w"]
+[ext_resource type="Script" uid="uid://dhyvq14x6tmxa" path="res://scenes/yellow_models/area_3d.gd" id="3_gkl14"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2v875"]
+size = Vector3(2.036621, 1.4812622, 2.008545)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4s27v"]
+size = Vector3(2.009903, 1.4842529, 1.8442383)
+
+[node name="tileMedium_Rotating" type="AnimatableBody3D" unique_id=1754690087]
+script = ExtResource("1_1qef8")
+rotation_speed = 0.5
+
+[node name="model" parent="." unique_id=1521424622 instance=ExtResource("2_qr33w")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1059080462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007080078, 0.76065063, 0.0030517578)
+shape = SubResource("BoxShape3D_2v875")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=203712977 node_paths=PackedStringArray("target_platform") groups=["painted_platforms"]]
+script = ExtResource("3_gkl14")
+target_platform = NodePath("../model/tileMedium_teamYellow")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=765795064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016075134, 0.77923584, 0.052978516)
+shape = SubResource("BoxShape3D_4s27v")
+
+[editable path="model"]

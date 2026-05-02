@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://boebsldbnpv5g"]
+
+[ext_resource type="Script" uid="uid://dx5o3mjusnkfh" path="res://star_collectible.gd" id="1_g0pf4"]
+[ext_resource type="PackedScene" uid="uid://5nuouupivm6v" path="res://models/red/heart_red.gltf" id="2_g0pf4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ldgey"]
+radius = 0.4463398
+
+[node name="HeartCollectible" type="Area3D" unique_id=1697943906]
+script = ExtResource("1_g0pf4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1121216780]
+transform = Transform3D(-1, 8.586626e-08, 1.6423353e-08, 0, -0.1878613, 0.9821957, 8.7422784e-08, 0.9821957, 0.1878613, 0, 0, 0)
+shape = SubResource("SphereShape3D_ldgey")
+
+[node name="heart_red2" parent="." unique_id=31588019 instance=ExtResource("2_g0pf4")]
