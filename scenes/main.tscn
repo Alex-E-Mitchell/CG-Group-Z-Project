@@ -45,16 +45,16 @@ roughness = 0.25
 uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_trceg"]
-size = Vector3(1, 14, 37)
+size = Vector3(1, 48, 37)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a8y0u"]
-size = Vector3(1, 14, 37)
+size = Vector3(1, 50, 37)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eb6dy"]
-size = Vector3(73, 14, 1)
+size = Vector3(73, 34, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jkv2x"]
-size = Vector3(73, 14, 1)
+size = Vector3(73, 39, 1)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_y6deb"]
 panorama = ExtResource("1_jyhfs")
@@ -89,7 +89,7 @@ input_back = "move_down"
 input_jump = "jump"
 fall_reset_y = -3.0
 
-[node name="UI" type="Control" parent="." unique_id=2101229226]
+[node name="UI" type="Control" parent="." unique_id=2101229226 node_paths=PackedStringArray("directional_light", "world_environment")]
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
@@ -98,15 +98,44 @@ offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
 script = ExtResource("3_sugp2")
+directional_light = NodePath("../DirectionalLight3D")
+world_environment = NodePath("../WorldEnvironment")
 
 [node name="ExitGameButton" type="Button" parent="UI" unique_id=2082409878]
 layout_mode = 0
-offset_left = -250.07
-offset_top = 54.0
-offset_right = -159.07
-offset_bottom = 85.00001
-scale = Vector2(2.515, 2.515)
+offset_left = -170.99994
+offset_top = 20.0
+offset_right = 3.000061
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 32
 text = "EXIT GAME"
+
+[node name="ToggleAmbient" type="Button" parent="UI" unique_id=4762573]
+layout_mode = 0
+offset_left = -324.0
+offset_top = 92.0
+offset_right = 9.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 32
+text = "Toggle Ambient Light"
+
+[node name="ToggleSpecular" type="Button" parent="UI" unique_id=1993080093]
+layout_mode = 0
+offset_left = -324.0
+offset_top = 173.0
+offset_right = 9.0
+offset_bottom = 226.0
+theme_override_font_sizes/font_size = 32
+text = "Toggle Specular "
+
+[node name="ToggleDiffuse" type="Button" parent="UI" unique_id=2016256091]
+layout_mode = 0
+offset_left = -324.0
+offset_top = 262.0
+offset_right = 9.0
+offset_bottom = 315.0
+theme_override_font_sizes/font_size = 32
+text = "Toggle Diffuse "
 
 [node name="MapBlocks" type="Node3D" parent="." unique_id=582972432]
 
@@ -502,19 +531,19 @@ surface_material_override/0 = SubResource("StandardMaterial3D_trceg")
 [node name="Bounds" type="StaticBody3D" parent="." unique_id=1411435235]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bounds" unique_id=1221606057]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.465761, 2.5, 70.18664)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.465761, 19.5, 70.18664)
 shape = SubResource("BoxShape3D_trceg")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Bounds" unique_id=844679571]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.46576, 2.5, 70.18664)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.46576, 20.5, 70.18664)
 shape = SubResource("BoxShape3D_a8y0u")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Bounds" unique_id=1920074269]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.46576, 2.5, 88.49384)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.46576, 12.5, 88.49384)
 shape = SubResource("BoxShape3D_eb6dy")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Bounds" unique_id=695484836]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.46576, 2.5, 51.186638)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.46576, 15, 51.186638)
 shape = SubResource("BoxShape3D_jkv2x")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=949678610]
@@ -611,4 +640,10 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -36,
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -28, 11, 58)
 
 [connection signal="pressed" from="UI/ExitGameButton" to="UI" method="_on_button_pressed"]
+[connection signal="pressed" from="UI/ToggleAmbient" to="UI" method="_on_toggle_ambient_pressed"]
+[connection signal="pressed" from="UI/ToggleSpecular" to="UI" method="_on_toggle_specular_pressed"]
+[connection signal="pressed" from="UI/ToggleSpecular" to="UI" method="_on_toggle_ambient_pressed"]
+[connection signal="pressed" from="UI/ToggleDiffuse" to="UI" method="_on_toggle_diffuse_pressed"]
+[connection signal="pressed" from="UI/ToggleDiffuse" to="UI" method="_on_toggle_specular_pressed"]
+[connection signal="pressed" from="UI/ToggleDiffuse" to="UI" method="_on_toggle_ambient_pressed"]
 [connection signal="body_entered" from="EnvironmentButton" to="EnvironmentButton" method="_on_body_entered"]
