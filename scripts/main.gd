@@ -18,8 +18,11 @@ func _on_timer_started() -> void:
 func _on_star_collected() -> void:
 	timer_ui.stop_timer()
 	print("Final time: ", timer_ui.timer_label.text)
+	star.visible = false
 
 
 func _on_player_respawned() -> void:
 	timer_button.reset_button()
 	timer_ui.reset_timer()
+	star.visible = true
+	star.already_collected = false
