@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://c3hh40tghlqqj"]
 
 [ext_resource type="PackedScene" uid="uid://cnoxxpn5npbkj" path="res://models/mini game assets/tileMedium_teamYellow.gltf.glb" id="1_axpqc"]
+[ext_resource type="Script" uid="uid://dhyvq14x6tmxa" path="res://scenes/yellow_models/area_3d.gd" id="2_2v875"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2v875"]
 size = Vector3(2.036621, 1.4812622, 2.008545)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4s27v"]
+size = Vector3(2.009903, 1.4842529, 1.8442383)
 
 [node name="tileMedium_Yellow" type="StaticBody3D" unique_id=291946824]
 
@@ -12,3 +16,13 @@ size = Vector3(2.036621, 1.4812622, 2.008545)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=170292381]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007080078, 0.76065063, 0.0030517578)
 shape = SubResource("BoxShape3D_2v875")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=583614493 node_paths=PackedStringArray("target_platform") groups=["painted_platforms"]]
+script = ExtResource("2_2v875")
+target_platform = NodePath("../model/tileMedium_teamYellow")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1208306413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016075134, 0.77923584, 0.052978516)
+shape = SubResource("BoxShape3D_4s27v")
+
+[editable path="model"]
