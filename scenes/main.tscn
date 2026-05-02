@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cxok2wdvt81hu" path="res://scripts/main.gd" id="1_0ld40"]
 [ext_resource type="Texture2D" uid="uid://bda6hf2vw5pla" path="res://skybox/kloofendal_48d_partly_cloudy_puresky_4k.exr" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://cpnq8f1xy18oh" path="res://skybox/qwantani_night_puresky_4k.exr" id="2_0ld40"]
 [ext_resource type="Script" uid="uid://ccfl3amiqy0cn" path="res://scripts/control.gd" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c3hh40tghlqqj" path="res://scenes/yellow_models/tile_medium_yellow.tscn" id="4_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://3mmn34mjhwml" path="res://scenes/yellow_models/tile_medium_yellow_moving.tscn" id="5_trceg"]
@@ -19,10 +20,11 @@
 [ext_resource type="PackedScene" uid="uid://cn1k4r7bii7ll" path="res://models/city assets/building_G.gltf" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bnxc2qwadodd3" path="res://models/city assets/building_H.gltf" id="16_jbj1t"]
 [ext_resource type="Script" uid="uid://3rstir3cltn8" path="res://scripts/timer_ui.gd" id="18_dp3eg"]
+[ext_resource type="Script" uid="uid://c463ke05vlo4l" path="res://scripts/environment_button.gd" id="20_gqmmt"]
+[ext_resource type="PackedScene" uid="uid://mwls5d0427tq" path="res://models/mini game assets/button_teamRed.gltf.glb" id="22_jscy8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jyhfs"]
 panorama = ExtResource("1_jyhfs")
-energy_multiplier = 0.75
 
 [sub_resource type="Sky" id="Sky_tbgi4"]
 sky_material = SubResource("PanoramaSkyMaterial_jyhfs")
@@ -51,6 +53,16 @@ size = Vector3(73, 14, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jkv2x"]
 size = Vector3(73, 14, 1)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yc10j"]
+panorama = ExtResource("1_jyhfs")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jscy8"]
+panorama = ExtResource("2_0ld40")
+energy_multiplier = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yc10j"]
+size = Vector3(1, 3, 1)
 
 [node name="Main" type="Node3D" unique_id=816671293]
 script = ExtResource("1_0ld40")
@@ -576,4 +588,19 @@ light_energy = 1.25
 shadow_enabled = true
 directional_shadow_max_distance = 1.0
 
+[node name="EnvironmentButton" type="Area3D" parent="." unique_id=1577119729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -33, 0)
+script = ExtResource("20_gqmmt")
+world_sky = SubResource("Sky_tbgi4")
+normal_environment = SubResource("PanoramaSkyMaterial_yc10j")
+alternate_environment = SubResource("PanoramaSkyMaterial_jscy8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnvironmentButton" unique_id=864189489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 37, 68)
+shape = SubResource("BoxShape3D_yc10j")
+
+[node name="button_teamRed_gltf" parent="." unique_id=720492636 instance=ExtResource("22_jscy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3.5, 68)
+
 [connection signal="pressed" from="UI/ExitGameButton" to="UI" method="_on_button_pressed"]
+[connection signal="body_entered" from="EnvironmentButton" to="EnvironmentButton" method="_on_body_entered"]
