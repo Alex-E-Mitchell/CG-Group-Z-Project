@@ -21,3 +21,31 @@ shape = SubResource("SphereShape3D_nknun")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CollectArea" unique_id=1573616456]
 shape = SubResource("SphereShape3D_0ubeq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1764208343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+light_color = Color(1, 0.81960785, 0, 1)
+light_energy = 3.632
+omni_range = 2.697
+omni_attenuation = -0.032
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=2092481727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+light_color = Color(1, 0.81960785, 0, 1)
+light_energy = 3.632
+omni_range = 2.697
+omni_attenuation = -0.032
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=2041185177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+light_color = Color(1, 0.81960785, 0, 1)
+light_energy = 3.632
+omni_range = 2.697
+omni_attenuation = -0.032
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=1075418813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+light_color = Color(1, 0.81960785, 0, 1)
+light_energy = 3.632
+omni_range = 2.697
+omni_attenuation = -0.032

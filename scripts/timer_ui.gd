@@ -33,6 +33,7 @@ func start_timer() -> void:
 func stop_timer() -> void:
 	timer_running = false
 	visible = true
+	timer_label.modulate = Color.YELLOW
 
 
 func reset_timer() -> void:
