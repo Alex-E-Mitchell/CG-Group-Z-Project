@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c3hh40tghlqqj" path="res://scenes/yellow_models/tile_medium_yellow.tscn" id="4_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://3mmn34mjhwml" path="res://scenes/yellow_models/tile_medium_yellow_moving.tscn" id="5_trceg"]
 [ext_resource type="PackedScene" uid="uid://duwjcfe0khu8k" path="res://scenes/yellow_models/tile_slope_low_medium_yellow.tscn" id="6_jbj1t"]
-[ext_resource type="PackedScene" path="res://scenes/tile_medium_rotating.tscn" id="6_yc10j"]
+[ext_resource type="PackedScene" uid="uid://clre3vrs17lsq" path="res://scenes/tile_medium_rotating.tscn" id="6_yc10j"]
 [ext_resource type="PackedScene" uid="uid://ln2ugmt7keqd" path="res://models/city assets/building_B.gltf" id="10_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://7l1aj7ph8e37" path="res://other textures/summer_background_47_a.jpg" id="12_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://ckq51ggweuesp" path="res://models/city assets/building_D.gltf" id="12_jbj1t"]
@@ -23,7 +23,8 @@
 [ext_resource type="Script" uid="uid://3rstir3cltn8" path="res://scripts/timer_ui.gd" id="18_dp3eg"]
 [ext_resource type="Script" uid="uid://c463ke05vlo4l" path="res://scripts/environment_button.gd" id="20_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://mwls5d0427tq" path="res://models/mini game assets/button_teamRed.gltf.glb" id="22_jscy8"]
-[ext_resource type="PackedScene" path="res://heart_collectible.tscn" id="23_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://boebsldbnpv5g" path="res://heart_collectible.tscn" id="23_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://id745mml5u82" path="res://scenes/spike_trap.tscn" id="25_og1vs"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jyhfs"]
 panorama = ExtResource("1_jyhfs")
@@ -145,6 +146,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2, 70)
 [node name="tileMedium_Rotating" parent="MapBlocks" unique_id=1754690087 instance=ExtResource("6_yc10j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 9, 82)
 
+[node name="tileMedium_Rotating3" parent="MapBlocks" unique_id=637872005 instance=ExtResource("6_yc10j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 17, 75)
+
 [node name="tileMedium_Yellow5" parent="MapBlocks" unique_id=474639579 instance=ExtResource("4_ya4ey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2, 68)
 
@@ -200,19 +204,49 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 7, 73)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 7, 75)
 
 [node name="tileMedium_Yellow6" parent="MapBlocks" unique_id=56340700 instance=ExtResource("4_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 10.8, 66)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 14.8, 76)
 
 [node name="tileMedium_Yellow18" parent="MapBlocks" unique_id=1727931474 instance=ExtResource("4_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 10.8, 64)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 14.8, 74)
+
+[node name="tileMedium_Yellow25" parent="MapBlocks" unique_id=86117556 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 9.8, 66)
+
+[node name="tileMedium_Yellow26" parent="MapBlocks" unique_id=83392943 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 9.8, 66)
+
+[node name="tileMedium_Yellow27" parent="MapBlocks" unique_id=817390005 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 9.8, 68)
+
+[node name="tileMedium_Yellow29" parent="MapBlocks" unique_id=150394659 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 17.8, 75)
+
+[node name="tileMedium_Yellow30" parent="MapBlocks" unique_id=715777789 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 17.8, 77)
+
+[node name="tileMedium_Yellow31" parent="MapBlocks" unique_id=11101384 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 17.8, 77)
+
+[node name="tileMedium_Yellow32" parent="MapBlocks" unique_id=2088313361 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 17.8, 75)
+
+[node name="tileMedium_Yellow33" parent="MapBlocks" unique_id=1294548150 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 17.8, 79)
+
+[node name="tileMedium_Yellow34" parent="MapBlocks" unique_id=226915619 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 17.8, 79)
+
+[node name="tileMedium_Yellow28" parent="MapBlocks" unique_id=1655104487 instance=ExtResource("4_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 9.8, 68)
 
 [node name="tileMedium_Yellow19" parent="MapBlocks" unique_id=506479771 instance=ExtResource("4_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 10.8, 64)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68, 14.8, 74)
 
 [node name="tileMedium_Yellow20" parent="MapBlocks" unique_id=851746153 instance=ExtResource("4_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 10.8, 66)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68, 14.8, 76)
 
 [node name="tileMedium_Yellow9" parent="MapBlocks" unique_id=1790266703 instance=ExtResource("4_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.799995, 15, 69.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.799995, 35, 69.1)
 
 [node name="AnimatableBody3D" parent="MapBlocks" unique_id=1061437184 instance=ExtResource("5_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 14, 67)
@@ -591,11 +625,15 @@ rotation_speed_degrees = 180.0
 reverse_direction = true
 
 [node name="swiper_teamRed3" parent="." unique_id=653913912 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 12.200001, 65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 16.2, 75)
+rotation_speed_degrees = 180.0
+
+[node name="swiper_teamRed4" parent="." unique_id=402787537 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 11.200001, 67)
 rotation_speed_degrees = 180.0
 
 [node name="Star" parent="." unique_id=690583090 instance=ExtResource("15_jbj1t")]
-transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -73, 18.5, 69)
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -73, 38.5, 69)
 collision_layer = 2
 collision_mask = 2
 
@@ -610,8 +648,8 @@ offset_left = -21.0
 offset_right = 21.0
 offset_bottom = 23.0
 grow_horizontal = 2
-scale = Vector2(3, 3)
 pivot_offset = Vector2(20.78, 0)
+theme_override_font_sizes/font_size = 94
 text = "00:00"
 horizontal_alignment = 1
 
@@ -636,14 +674,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3.5, 68)
 [node name="HeartCollectible" parent="." unique_id=1697943906 groups=["painted_platforms"] instance=ExtResource("23_pm3ni")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -36, 12, 82)
 
+[node name="HeartCollectible3" parent="." unique_id=1857594097 groups=["painted_platforms"] instance=ExtResource("23_pm3ni")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -59, 20, 75)
+
 [node name="HeartCollectible2" parent="." unique_id=823126095 groups=["painted_platforms"] instance=ExtResource("23_pm3ni")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -28, 11, 58)
+
+[node name="spike_trap" parent="." unique_id=1737981912 instance=ExtResource("25_og1vs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 19.3, 75)
 
 [connection signal="pressed" from="UI/ExitGameButton" to="UI" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/ToggleAmbient" to="UI" method="_on_toggle_ambient_pressed"]
 [connection signal="pressed" from="UI/ToggleSpecular" to="UI" method="_on_toggle_specular_pressed"]
-[connection signal="pressed" from="UI/ToggleSpecular" to="UI" method="_on_toggle_ambient_pressed"]
 [connection signal="pressed" from="UI/ToggleDiffuse" to="UI" method="_on_toggle_diffuse_pressed"]
-[connection signal="pressed" from="UI/ToggleDiffuse" to="UI" method="_on_toggle_specular_pressed"]
-[connection signal="pressed" from="UI/ToggleDiffuse" to="UI" method="_on_toggle_ambient_pressed"]
 [connection signal="body_entered" from="EnvironmentButton" to="EnvironmentButton" method="_on_body_entered"]

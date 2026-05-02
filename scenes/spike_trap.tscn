@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://id745mml5u82"]
+
+[ext_resource type="PackedScene" uid="uid://d1hy11ycjhvdy" path="res://models/mini game assets/spikeRoller.gltf.glb" id="1_sjvdi"]
+[ext_resource type="Script" uid="uid://v8mv6i1w7nh2" path="res://scenes/spike_trap.gd" id="1_u4qhk"]
+[ext_resource type="Script" uid="uid://d1r8vo4eb4wcy" path="res://scripts/spike_area.gd" id="3_adao6"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_adao6"]
+radius = 0.8
+
+[node name="spike_trap" type="AnimatableBody3D" unique_id=1737981912]
+script = ExtResource("1_u4qhk")
+
+[node name="spikeRoller_gltf" parent="." unique_id=946821589 instance=ExtResource("1_sjvdi")]
+
+[node name="spike_area" type="Area3D" parent="." unique_id=79378004]
+script = ExtResource("3_adao6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="spike_area" unique_id=1490624544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_adao6")
+
+[connection signal="body_entered" from="spike_area" to="spike_area" method="_on_body_entered"]
