@@ -144,7 +144,8 @@ func respawn() -> void:
 	
 	head.transform.basis = Basis()
 	head.rotate_x(look_rotation.x)
-
+	get_tree().call_group("painted_platforms", "reset_color")
+	
 	player_respawned.emit()
 
 ## Rotate us to look around.

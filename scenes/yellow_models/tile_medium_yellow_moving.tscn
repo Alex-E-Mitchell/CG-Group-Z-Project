@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://d115n7dov1ms" path="res://scripts/floating_platform.gd" id="1_msrab"]
 [ext_resource type="PackedScene" uid="uid://cnoxxpn5npbkj" path="res://models/mini game assets/tileMedium_teamYellow.gltf.glb" id="2_s6pt5"]
+[ext_resource type="Script" uid="uid://dhyvq14x6tmxa" path="res://scenes/yellow_models/area_3d.gd" id="3_s6pt5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v6qlt"]
 size = Vector3(2.036621, 1.4812622, 2.008545)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pmu2a"]
+size = Vector3(2.009903, 1.4842529, 1.9699707)
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" unique_id=1061437184]
 script = ExtResource("1_msrab")
@@ -14,3 +18,13 @@ script = ExtResource("1_msrab")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1058512695]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007080078, 0.76065063, 0.0030517578)
 shape = SubResource("BoxShape3D_v6qlt")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=232392431 node_paths=PackedStringArray("target_platform") groups=["painted_platforms"]]
+script = ExtResource("3_s6pt5")
+target_platform = NodePath("../model/tileMedium_teamYellow")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1446780634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016075134, 0.77923584, -0.009887695)
+shape = SubResource("BoxShape3D_pmu2a")
+
+[editable path="model"]
