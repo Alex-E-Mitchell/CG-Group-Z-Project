@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://j5otywsiqxyy"]
+
+[ext_resource type="Script" uid="uid://dx5o3mjusnkfh" path="res://star_collectible.gd" id="1_gk0vi"]
+[ext_resource type="PackedScene" uid="uid://dlikq74bym061" path="res://models/yellow/star_yellow.gltf" id="2_1v34u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ldgey"]
+radius = 0.4463398
+
+[node name="StarCollectible" type="Area3D" unique_id=1697943906]
+script = ExtResource("1_gk0vi")
+
+[node name="star_yellow2" parent="." unique_id=1710756834 instance=ExtResource("2_1v34u")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1121216780]
+transform = Transform3D(1, 0, 0, 0, -0.18786128, 0.98219556, 0, -0.98219556, -0.18786128, 0, 0, 0)
+shape = SubResource("SphereShape3D_ldgey")

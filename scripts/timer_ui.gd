@@ -43,3 +43,7 @@ func format_time(time: float) -> String:
 	var milliseconds := int((time - int(time)) * 100)
 
 	return "%02d:%02d.%02d" % [minutes, seconds, milliseconds]
+
+
+func reduce_time(amount: float) -> void:
+	elapsed_time -= amount
