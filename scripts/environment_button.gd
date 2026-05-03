@@ -18,7 +18,7 @@ func _on_body_entered(body: Node3D) -> void:
 	
 	if world_sky.sky_material == normal_environment:
 		world_sky.sky_material = alternate_environment
-		directional_light.light_energy = 0.25
+		directional_light.light_energy = 0.1
 		directional_light.light_specular = 0.00
 	else:
 		world_sky.sky_material = normal_environment

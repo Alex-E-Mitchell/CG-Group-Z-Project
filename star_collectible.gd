@@ -9,7 +9,7 @@ var is_collected := false
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not is_collected:
 		#rotate_y(rotation_speed * delta)
 		
