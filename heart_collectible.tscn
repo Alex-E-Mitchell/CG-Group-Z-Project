@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://boebsldbnpv5g"]
 
-[ext_resource type="Script" uid="uid://dx5o3mjusnkfh" path="res://star_collectible.gd" id="1_g0pf4"]
+[ext_resource type="Script" uid="uid://dx5o3mjusnkfh" path="res://heart_collectible.gd" id="1_g0pf4"]
 [ext_resource type="PackedScene" uid="uid://5nuouupivm6v" path="res://models/red/heart_red.gltf" id="2_g0pf4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ldgey"]
