@@ -1,11 +1,3 @@
-# CG Group Z Project
-
-Godot download (our project is in Godot 4.6.2): https://godotengine.org/download/windows/.
-
-How to use Godot project with Github Desktop: https://www.youtube.com/watch?v=fZ-CJIYPFMI&t=370s
-
-Basics on making a 3D game in Godot: https://www.youtube.com/watch?v=ke5KpqcoiIU
-
 # How to play
 Click to lock the cursor to the game. Look around by hovering the mouse. Free cam controls are relative to camera position.
 WASD - Movement controls
