@@ -6,6 +6,18 @@ How to use Godot project with Github Desktop: https://www.youtube.com/watch?v=fZ
 
 Basics on making a 3D game in Godot: https://www.youtube.com/watch?v=ke5KpqcoiIU
 
+# How to play
+Click to lock the cursor to the game. Look around by hovering the mouse. Free cam controls are relative to camera position.
+WASD - Movement controls
+Space - Jump
+Shift - Run
+Q - Toggle free cam
+Esc - Unlock cursor
+
+The blue button at the starting platform starts a timer. Collect hearts to reduce time, avoid spikes that increase time. Reach the star to win (and stop the timer).
+The red button to the right of the player toggles day/night.
+The four UI buttons do exactly what they say they do - toggle different light effects and exit the game.
+
 # Using KayKit Platformer Asset Pack
 Link to platformer asset pack by Kay Lousberg (it's free): https://kaylousberg.itch.io/kaykit-platformer . We should use these assets as our basic environment. 
 
