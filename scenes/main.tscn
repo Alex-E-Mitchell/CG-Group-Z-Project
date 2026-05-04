@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://si0vdlatnmhk"]
+[gd_scene format=3 uid="uid://cgrw3w27ua26k"]
 
 [ext_resource type="Script" uid="uid://cxok2wdvt81hu" path="res://scripts/main.gd" id="1_0ld40"]
 [ext_resource type="Texture2D" uid="uid://bda6hf2vw5pla" path="res://skybox/kloofendal_48d_partly_cloudy_puresky_4k.exr" id="1_jyhfs"]
@@ -135,13 +135,13 @@ text = "Toggle Specular "
 
 [node name="ToggleDiffuse" type="Button" parent="UI" unique_id=2016256091]
 layout_mode = 0
-offset_left = -324.0
+offset_left = -369.0
 offset_top = 262.0
-offset_right = 9.0
+offset_right = 10.0
 offset_bottom = 315.0
 focus_mode = 0
 theme_override_font_sizes/font_size = 32
-text = "Toggle Diffuse "
+text = "Toggle Directional Light "
 
 [node name="MapBlocks" type="Node3D" parent="." unique_id=582972432]
 
