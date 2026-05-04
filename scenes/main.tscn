@@ -24,7 +24,7 @@
 [ext_resource type="Script" uid="uid://c463ke05vlo4l" path="res://scripts/environment_button.gd" id="20_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://mwls5d0427tq" path="res://models/mini game assets/button_teamRed.gltf.glb" id="22_jscy8"]
 [ext_resource type="PackedScene" uid="uid://boebsldbnpv5g" path="res://heart_collectible.tscn" id="23_pm3ni"]
-[ext_resource type="PackedScene" uid="uid://id745mml5u82" path="res://scenes/spike_trap.tscn" id="25_og1vs"]
+[ext_resource type="PackedScene" path="res://scenes/spike_trap.tscn" id="25_og1vs"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jyhfs"]
 panorama = ExtResource("1_jyhfs")

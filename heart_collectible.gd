@@ -24,6 +24,7 @@ func _on_body_entered(body: Node3D) -> void:
 
 func collect() -> void:
 	is_collected = true
+	print("Heart collected!")
 	hide() # This makes the star invisible
 	# We turn off the collision so the player doesn't keep hitting it while invisible
 	$CollisionShape3D.set_deferred("disabled", true)
